@@ -2,11 +2,13 @@
 import { Step, Table, BeforeSuite, AfterSuite } from "gauge-ts";
 import assert = require("assert");
 import LoginPage from "../pageObjects/login.page";
+import {page} from '@playwright/test';
+
 const password = process.env.PASSWORD;
 
 
 export default class StepImplementation {
-    const loginPage = new LoginPage();
+    const loginPage = new LoginPage(page);
 
     // @BeforeSuite()
 
@@ -14,9 +16,10 @@ export default class StepImplementation {
     // public async afterSuite() {
     //     await closeBrowser();
     // };
-
     @Step("Open test website")
-    loginPage.navigateToLogin()
+    public async navigateToLogin(){
+        await page.goto('/');
+    }
     
     @Step("Login with <password> and <table>")
     public async loginWithValidCredentials(password: string, table: Table) {

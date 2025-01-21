@@ -9,7 +9,7 @@ export default class LoginPage {
 
   constructor(readonly page: Page) {}
 
-  async navigateToLogin(){
-    await this.page.goto('/');
-  }
+  // async navigateToLogin(){
+  //   await this.page.goto('/');
+  // }
 }
