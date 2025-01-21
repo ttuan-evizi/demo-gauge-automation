@@ -1,0 +1,19 @@
+{
+  "name": "gauge-ts-template",
+  "description": "Starter template for writing TypeScript tests for Gauge",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "gauge-ts": "0.3.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1",
+    "@types/node": "latest"
+  },
+  "scripts": {
+    "test": "gauge run specs",
+    "test-demo": "gauge run specs/testing.spec",
+    "test-evr": "gauge run specs/evr.spec"
+  }
+}

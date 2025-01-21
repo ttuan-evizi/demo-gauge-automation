@@ -1,0 +1,10 @@
+.gauge
+.vscode
+env
+logs
+node_modules
+reports
+tests-examples
+package-lock.json
+metadata.json
+manifest.json
