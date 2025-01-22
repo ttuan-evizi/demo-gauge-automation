@@ -1,33 +1,38 @@
-# Login Tests
-This is a test suite for login functionality of the SauceDemo website.
+# Demo Tests
+This is a test suite for the SauceDemo website to demo.
 
-## Go to test site
-* Open test website
+## Login functionality
+Valid users must be able to log in, and invalid users must be blocked.
 
-## Check the UI
-* Check login form UI
+Tags: login, validation
 
-## Login  
-* Login with "secret_sauce" and
-    |username               | 
-    |-----------------------|
-    |standard_user          |
+* Navigate to the test site
+* Verify the login form is ready for login
+* Login as    
+    |username       |login_status |error_msg                                                                |
+    |---------------|-------------|-------------------------------------------------------------------------|
+    |standard_user  |true         |                                                                         |
+    |locked_out_user|false        |Epic sadface: Sorry, this user has been locked out.                      |        
+    |problem_user   |true         |
+    |random_user    |false        |Epic sadface: Username and password do not match any user in this service|
 
-## Check the UI after login
-* Verify login successful
-
-## Add to cart
+## Cart functionality
+* Login as a "standard_user"
 * Add to cart    
-    |item                   | 
-    |-----------------------|
-    |standard_user          |
-    |locked_out_user        |         
-    |problem_user           |
+    |id                    |quantity|
+    |----------------------|--------|
+    |sauce-labs-backpack   |1       |
+    |sauce-labs-bike-light |1       |
+    |sauce-labs-onesie     |1       |
 
-
-## Go to cart
-* Navigate to "Cart"
-
-## Check the items in the cart
+* Navigate to Cart
+* Remove "item" from Cart
 * Verify items in the cart
-* Check total amount
+    |id                    |item_name             |quantity|
+    |----------------------|----------------------|--------|
+    |sauce-labs-backpack   |Sauce Labs Backpack   |1       |
+    |sauce-labs-bike-light |Sauce Labs Bike Light |1       |
+    |sauce-labs-onesie     |Sauce Labs Onesie     |1       |
+___
+## Teardown session
+* Sign out from account
